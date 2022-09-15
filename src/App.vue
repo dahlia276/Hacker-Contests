@@ -7,16 +7,45 @@
     <label class="flex">
 <input class="ml-2 mr-1 mb-1 mt-1 inline-block" data-id="{{inputDataId}}" type="checkbox" >
 <span class="text-sm inline-block">
- sdfsd fsd fsd fsdfds fsdf sdf s fsdfsdf
+ sdfsd fsd fsd fsdfds fsdf 
 </span>
-</label>      <input type="checkbox" name="fruit" value="Orange"> Orange
-      <input type="checkbox" name="fruit" value="Banana"> Banana
-      <input type="checkbox" name="fruit" value="Apple"> Apple
-      <input type="checkbox" name="fruit" value="Orange"> Orange
-      <input type="checkbox" name="fruit" value="Banana"> Banana
-      <input type="checkbox" name="fruit" value="Apple"> Apple
-      <input type="checkbox" name="fruit" value="Orange"> Orange
-      <input type="checkbox" name="fruit" value="Banana"> Banana
+</label>  
+<label class="flex">
+<input class="ml-2 mr-1 mb-1 mt-1 inline-block" data-id="{{inputDataId}}" type="checkbox" >
+<span class="text-sm inline-block">
+ sdfsd fsd fsd fsdfds fsdf 
+</span>
+</label>      
+<label class="flex">
+<input class="ml-2 mr-1 mb-1 mt-1 inline-block" data-id="{{inputDataId}}" type="checkbox" >
+<span class="text-sm inline-block">
+ sdfsd fsd fsd fsdfds fsdf 
+</span>
+</label>      
+<label class="flex">
+<input class="ml-2 mr-1 mb-1 mt-1 inline-block" data-id="{{inputDataId}}" type="checkbox" >
+<span class="text-sm inline-block">
+ sdfsd fsd fsd fsdfds fsdf 
+</span>
+</label>      
+<label class="flex">
+<input class="ml-2 mr-1 mb-1 mt-1 inline-block" data-id="{{inputDataId}}" type="checkbox" >
+<span class="text-sm inline-block">
+ sdfsd fsd fsd fsdfds fsdf 
+</span>
+</label>      
+<label class="flex">
+<input class="ml-2 mr-1 mb-1 mt-1 inline-block" data-id="{{inputDataId}}" type="checkbox" >
+<span class="text-sm inline-block">
+ sdfsd fsd fsd fsdfds fsdf 
+</span>
+</label>      
+<label class="flex">
+<input class="ml-2 mr-1 mb-1 mt-1 inline-block" data-id="{{inputDataId}}" type="checkbox" >
+<span class="text-sm inline-block">
+ sdfsd fsd fsd fsdfds fsdf 
+</span>
+</label>      
       </div>
         <button class="btn"> Show Contests</button>
        </div>
@@ -64,9 +93,10 @@ export default {
 <style scoped lang="postcss">
 
 .container{
-  @apply flex flex-col lg:flex-row
+  @apply flex flex-col md:flex-row md:space-x-16
    lg:space-x-8 max-w-max
-    pr-8 pl-28 justify-center
+   justify-center mx-auto
+    /* pr-8 pl-28  */
 }
 
 .filter-title{
@@ -76,15 +106,15 @@ export default {
 
 .filter-boxes{
   @apply flex flex-col
-  font-sans items-start font-medium
-  border-solid text-lg lg:w-[280px]
+  font-sans items-center pr-4 pl-4 md:pr-0 md:pl-0 pt-4 pb-4 font-medium
+  border-solid text-lg lg:w-[280px] md:w-[300px]
   rounded-md border-2 border-black;
 }
 .filters-container{
   @apply
   flex flex-col min-w-min
   content-center shrink mx-auto
-   w-1/6 md:w-2/6 lg:w-3/6
+   /* w-1/6 md:w-2/6 lg:w-3/6 */
 }
 
 .btn {
@@ -93,18 +123,17 @@ export default {
     cursor-pointer rounded-md border-none
     text-sm text-left font-sans text-white
 }
-</script>
 
 .results-container {
- @apply flex flex-col content-center pl-40 pt-[70px]
+ @apply flex flex-col content-center lg:pl-40 pt-[50px] lg:pt-[70px]
 }
 
 .contest-tile{
   @apply flex flex-col space-y-0
-  font-sans text-xl font-normal
+  font-sans text-base lg:text-xl lg:font-normal
   rounded-md border-2 border-black
   border-solid mx-auto items-start
-  mb-4 lg:w-[600px] leading-normal pl-4
+  mb-4 w-[340px]  leading-normal pl-4
   /* w-[40%] md:w-[50%] lg:max-w-[60%] */
 }
 </style>
