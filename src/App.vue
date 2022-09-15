@@ -50,43 +50,40 @@
         <button class="btn"> Show Contests</button>
        </div>
        <!-- <img src="./src/assets/circles-menu-3.gif" alt="loading icon"> -->
-       <div class="results-container"  >
-           <div class="contest-tile">
-              <a class="contest-title">Contest 1</a>
-              <p class="contest-start-date m-0">Start time: 29.10.2022 </p>
-              <p class="contest-end-date">End time: 30.10.2022 </p>
-              <p class="contest-duration">Duration: 3 hours </p>
-            </div>
-            <div class="contest-tile">
-              <a class="contest-title">Contest 1</a>
-              <p class="contest-start-date m-0">Start time: 29.10.2022 </p>
-              <p class="contest-end-date">End time: 30.10.2022 </p>
-              <p class="contest-duration">Duration: 3 hours </p>
-            </div>
-            <div class="contest-tile">
-              <a class="contest-title">Contest 1</a>
-              <p class="contest-start-date m-0">Start time: 29.10.2022 </p>
-              <p class="contest-end-date">End time: 30.10.2022 </p>
-              <p class="contest-duration">Duration: 3 hours </p>
-            </div>
-            <div class="contest-tile">
-              <a class="contest-title" href="#">Contest 1</a>
-              <p class="contest-start-date m-0">Start time: 29.10.2022 </p>
-              <p class="contest-end-date">End time: 30.10.2022 </p>
-              <p class="contest-duration">Duration: 3 hours </p>
-            </div>
-        </div>
+       <ContestsContainer :contests="this.contests"/>
   </div>
 </template>
 
 <script>
 import Header from '@/components/Header';
+import ContestsContainer from "@/components/ContestsContainer.vue"
 
 export default {
   components: {
     Header,
+   ContestsContainer,
+  },
+   props: {},
+    data() {
+    return {
+      contests: []
+    }
+  },
+  methods:{
+    async getContests() {
+      try {
+      const res = await fetch('https://kontests.net/api/v1/all')
+      this.contests = await res.json()
+      }
+      catch(error){
+        alert("Sorry, The content you're looking for is currently unavailable")
+      }
+    },
+  },
+  created () {
+    this.getContests()
   }
-};
+  };
 
 </script>
 
@@ -101,7 +98,7 @@ export default {
 
 .filter-title{
   @apply font-sans text-xl
-  mx-auto font-bold
+  mx-auto 
 }
 
 .filter-boxes{
@@ -122,18 +119,5 @@ export default {
      m-5 px-8 py-2 w-max mx-auto
     cursor-pointer rounded-md border-none
     text-sm text-left font-sans text-white
-}
-
-.results-container {
- @apply flex flex-col content-center lg:pl-40 pt-[50px] lg:pt-[70px]
-}
-
-.contest-tile{
-  @apply flex flex-col space-y-0
-  font-sans text-base lg:text-xl lg:font-normal
-  rounded-md border-2 border-black
-  border-solid mx-auto items-start
-  mb-4 w-[340px]  leading-normal pl-4
-  /* w-[40%] md:w-[50%] lg:max-w-[60%] */
 }
 </style>
