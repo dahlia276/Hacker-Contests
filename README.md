@@ -1,24 +1,19 @@
 # hacker-contests
 
-## Project setup
-```
-npm install
-```
+### Introduction:
+A web application based on the (https://kontests.net/api) API that allows you to browse hacker contests happening around the world.
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+### Pre requisites:
+* Node V.14
 
-### Compiles and minifies for production
-```
-npm run build
-```
+### To contribute:
+* Clone the repository 
+* Run `npm install` to install all dependencies.
+* Run `npm run serve`
+* Visit (http://localhost:8080) in your browser.
 
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### Future plans:
+* Handle empty state
+* Handle loading state
+* Add a sort functionality to sort contests by their start dates
+* Highlight contests that are currently in progress
